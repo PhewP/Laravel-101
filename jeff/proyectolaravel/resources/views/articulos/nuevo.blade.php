@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.header')
 @section('contenido')
 <h2>Insertar articulo</h2>
 <a href="{{route('articulos')}}" title="Articulos"> Articulos</a>
