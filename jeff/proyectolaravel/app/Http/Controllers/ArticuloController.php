@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\NuevoArticuloRequest;
+use App\Models\Articulo;
 
 class ArticuloController extends Controller
 {
     public function index() {
-        return view('articulos.articulos');
+        $articulos = Articulo::all();
+        return view('articulos.articulos')->with(['articulos' => $articulos]);
     }
 
     public function nuevo() {
