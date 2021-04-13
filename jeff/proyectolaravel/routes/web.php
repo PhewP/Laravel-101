@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/articulos', 'ArticuloController@index')->name('articulos');
 Route::get('/articulos/nuevo', 'ArticuloController@nuevo')->name('insertar_articulo');
+Route::post('/articulos', 'ArticuloController@guardar')->name('guardar_articulo');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
