@@ -9,4 +9,8 @@ class ArticuloController extends Controller
     public function index() {
         return view('articulos.articulos');
     }
+
+    public function nuevo() {
+        return view('articulos.nuevo');
+    }
 }
