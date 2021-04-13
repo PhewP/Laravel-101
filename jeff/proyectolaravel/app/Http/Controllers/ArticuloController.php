@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\NuevoArticuloRequest;
 
 class ArticuloController extends Controller
 {
@@ -12,5 +13,9 @@ class ArticuloController extends Controller
 
     public function nuevo() {
         return view('articulos.nuevo');
+    }
+
+    public function guardar(NuevoArticuloRequest $request) {
+
     }
 }
