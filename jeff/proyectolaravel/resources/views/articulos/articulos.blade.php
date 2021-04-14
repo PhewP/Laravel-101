@@ -10,4 +10,5 @@
         <p>{{$articulo->descripcion}}</p>
         <br />
     @endforeach
+    <p>{{$articulos->render()}}</p>
 @endsection
