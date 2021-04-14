@@ -18,7 +18,8 @@ class ArticuloController extends Controller
     }
 
     public function guardar(NuevoArticuloRequest $request) {
-
+        $art = Articulo::Create($request->only('titulo', 'descripcion', 'cuerpo'));
+        return redirect()->route('un_articulo', ['art'=>$art->id]);
     }
 
     public function mostrar_articulo(Articulo $art) {
