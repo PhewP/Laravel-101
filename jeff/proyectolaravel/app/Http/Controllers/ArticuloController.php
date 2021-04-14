@@ -20,4 +20,8 @@ class ArticuloController extends Controller
     public function guardar(NuevoArticuloRequest $request) {
 
     }
+
+    public function mostrar_articulo(Articulo $art) {
+        return view('articulos.mostrar_articulo')->with(['articulo'=>$art]);
+    }
 }
