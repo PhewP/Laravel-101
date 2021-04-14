@@ -7,8 +7,7 @@
         <a href="{{ route('un_articulo', ['art'=>$articulo->id])}}" title="Ver articulo">
             <h2>{{$articulo->titulo}}</h2>
         </a>
-        <p>{{$fila->descripcion}}</p>
+        <p>{{$articulo->descripcion}}</p>
         <br />
     @endforeach
-
 @endsection
