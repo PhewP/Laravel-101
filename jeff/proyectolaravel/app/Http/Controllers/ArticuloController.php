@@ -9,7 +9,7 @@ use App\Models\Articulo;
 class ArticuloController extends Controller
 {
     public function index() {
-        $articulos = Articulo::all();
+        $articulos = Articulo::orderBy('id', 'desc')->paginate(2);
         return view('articulos.articulos')->with(['articulos' => $articulos]);
     }
 
