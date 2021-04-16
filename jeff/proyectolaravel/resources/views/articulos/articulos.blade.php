@@ -7,9 +7,9 @@
     @if(Auth::check())
         <button type="button" class="btn btn-primary">{{Auth::user()->name}}</button>
         <a href="/user" title="Usuario">Usuario</a>
-        <form method="POST" action="{{route('login')}}"> 
+        <form method="POST" action="{{route('logout')}}"> 
             @csrf 
-            <x-jet-dropdown-link href="{{route('login')}}"
+            <x-jet-dropdown-link href="{{route('logout')}}"
                 onclick="event.preventDefault();
                 this.closest('form').submit();">
                 <img src="{{url('/img/logout.png')}}" alt="" width="45" height="45">
@@ -17,11 +17,20 @@
         </form>
     @endif
     @foreach($articulos as $articulo)
-        <a href="{{ route('un_articulo', ['art'=>$articulo->id])}}" title="Ver articulo">
-            <h2>{{$articulo->titulo}}</h2>
-        </a>
-        <p>{{$articulo->descripcion}}</p>
-        <br />
+    <div class="card" style="width: 18 rem;">
+    <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">
+                {{$articulo->titulo}}
+            </h5>
+            <p class="card-text">{{$articulo->descripcion}}</p>
+            <a href="{{ route('un_articulo', ['art'=>$articulo->id])}}" 
+            class="btn btn-primary">Ver Articulo</a>
+        </div>
+        
+       
+        <!-- <br /> -->
+    </div>
     @endforeach
     <p>{{$articulos->render()}}</p>
 @endsection
